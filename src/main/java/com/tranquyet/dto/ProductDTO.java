@@ -1,15 +1,12 @@
 package com.tranquyet.dto;
 
-import com.tranquyet.entity.CategoryEntity;
-import com.tranquyet.entity.ManufactureEntity;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(of = { "code", "name", "category", "manufacture" })
+@ToString(of = { "code", "name", "categoryCode", "manufactureCode" })
 public class ProductDTO extends BasedDTO<ProductDTO> {
 
 	private String code;
@@ -42,10 +39,10 @@ public class ProductDTO extends BasedDTO<ProductDTO> {
 
 	private long id_category;
 
-	private CategoryEntity category;
+	private String categoryCode;
 
 	private long id_manufacture;
 
-	private ManufactureEntity manufacture;
+	private String manufactureCode;
 
 }

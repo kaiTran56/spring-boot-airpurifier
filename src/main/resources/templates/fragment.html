@@ -41,7 +41,7 @@
 			</button>
 
 			<div class="navbar-header pull-left">
-				<a href="index.html" class="navbar-brand"> <small> <i
+				<a th:href="@{/admin/home}" class="navbar-brand"> <small> <i
 						class="fa fa-leaf"></i> Admin
 				</small>
 				</a>
@@ -192,93 +192,90 @@
 		<!-- /.sidebar-shortcuts -->
 
 		<ul class="nav nav-list">
-			<li class="active"><a href="index.html"> <i
+			<li class="active"><a th:href="@{/admin/home}"> <i
 					class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
 						Dashboard </span>
 			</a> <b class="arrow"></b></li>
 
 
-			<li class=""><a href="#" class="dropdown-toggle"> <i
-					class="menu-icon fa fa-list"></i> <span class="menu-text">
-						Tables </span> <b class="arrow fa fa-angle-down"></b>
+			<li class=""><a th:href="@{/admin/product/list}"
+				class="dropdown-toggle"> <i class="menu-icon fa fa-list"></i> <span
+					class="menu-text"> Product </span> <b
+					class="arrow fa fa-angle-down"></b>
 			</a> <b class="arrow"></b>
 
 				<ul class="submenu">
-					<li class=""><a href="tables.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Simple &amp; Dynamic
+					<li class=""><a th:href="@{/admin/product/list}"> <i
+							class="menu-icon fa fa-caret-right"></i> Show
 					</a> <b class="arrow"></b></li>
 
-					<li class=""><a href="jqgrid.html"> <i
-							class="menu-icon fa fa-caret-right"></i> jqGrid plugin
+					<li class=""><a th:href="@{/admin/product/create}"> <i
+							class="menu-icon fa fa-caret-right"></i> Creation
 					</a> <b class="arrow"></b></li>
 				</ul></li>
 
-			<li class=""><a href="#" class="dropdown-toggle"> <i
-					class="menu-icon fa fa-pencil-square-o"></i> <span
-					class="menu-text"> Forms </span> <b class="arrow fa fa-angle-down"></b>
+			<li class=""><a th:href="@{/admin/category/list}"
+				class="dropdown-toggle"> <i class="menu-icon fa fa-list"></i> <span
+					class="menu-text"> Category </span> <b
+					class="arrow fa fa-angle-down"></b>
 			</a> <b class="arrow"></b>
 
 				<ul class="submenu">
-					<li class=""><a href="form-elements.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Form Elements
+					<li class=""><a th:href="@{/admin/category/list}"> <i
+							class="menu-icon fa fa-caret-right"></i> Show
 					</a> <b class="arrow"></b></li>
 
-					<li class=""><a href="form-elements-2.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Form Elements 2
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="form-wizard.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Wizard &amp; Validation
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="wysiwyg.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Wysiwyg &amp; Markdown
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="dropzone.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Dropzone File Upload
+					<li class=""><a th:href="@{/admin/category/create}"> <i
+							class="menu-icon fa fa-caret-right"></i> Creation
 					</a> <b class="arrow"></b></li>
 				</ul></li>
 
-
-
-
-
-			<li class=""><a href="#" class="dropdown-toggle"> <i
-					class="menu-icon fa fa-tag"></i> <span class="menu-text">
-						More Pages </span> <b class="arrow fa fa-angle-down"></b>
+			<li class=""><a th:href="@{/admin/category/list}"
+				class="dropdown-toggle"> <i class="menu-icon fa fa-list"></i> <span
+					class="menu-text"> Manufacture </span> <b
+					class="arrow fa fa-angle-down"></b>
 			</a> <b class="arrow"></b>
 
 				<ul class="submenu">
-					<li class=""><a href="profile.html"> <i
-							class="menu-icon fa fa-caret-right"></i> User Profile
+					<li class=""><a th:href="@{/admin/manufacture/list}"> <i
+							class="menu-icon fa fa-caret-right"></i> Show
 					</a> <b class="arrow"></b></li>
 
-					<li class=""><a href="inbox.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Inbox
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="pricing.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Pricing Tables
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="invoice.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Invoice
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="timeline.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Timeline
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="email.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Email Templates
-					</a> <b class="arrow"></b></li>
-
-					<li class=""><a href="login.html"> <i
-							class="menu-icon fa fa-caret-right"></i> Login &amp; Register
+					<li class=""><a th:href="@{/admin/manufacture/create}"> <i
+							class="menu-icon fa fa-caret-right"></i> Creation
 					</a> <b class="arrow"></b></li>
 				</ul></li>
+			<li class=""><a th:href="@{/admin/topic/list}"
+				class="dropdown-toggle"> <i class="menu-icon fa fa-list"></i> <span
+					class="menu-text"> Topic </span> <b
+					class="arrow fa fa-angle-down"></b>
+			</a> <b class="arrow"></b>
 
+				<ul class="submenu">
+					<li class=""><a th:href="@{/admin/topic/list}"> <i
+							class="menu-icon fa fa-caret-right"></i> Show
+					</a> <b class="arrow"></b></li>
+
+					<li class=""><a th:href="@{/admin/topic/create}"> <i
+							class="menu-icon fa fa-caret-right"></i> Creation
+					</a> <b class="arrow"></b></li>
+				</ul></li>
+				
+				<li class=""><a th:href="@{/admin/news/list}"
+				class="dropdown-toggle"> <i class="menu-icon fa fa-list"></i> <span
+					class="menu-text"> News </span> <b
+					class="arrow fa fa-angle-down"></b>
+			</a> <b class="arrow"></b>
+
+				<ul class="submenu">
+					<li class=""><a th:href="@{/admin/news/list}"> <i
+							class="menu-icon fa fa-caret-right"></i> Show
+					</a> <b class="arrow"></b></li>
+
+					<li class=""><a th:href="@{/admin/news/create}"> <i
+							class="menu-icon fa fa-caret-right"></i> Creation
+					</a> <b class="arrow"></b></li>
+				</ul></li>
 
 		</ul>
 		<!-- /.nav-list -->

@@ -26,10 +26,7 @@ public class RegistrationController {
 	public String showRegistration() {
 		return "registration/registration";
 	}
-	@GetMapping("/test")
-	public String show() {
-		return "sec";
-	}
+	
 
 	@PostMapping
 	public String resgistrationUserAccount(@ModelAttribute("user") UserDTO userDTO) {

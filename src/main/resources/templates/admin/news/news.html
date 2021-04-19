@@ -28,7 +28,7 @@
 					<!-- /.ace-settings-container -->
 
 					<div class="page-header">
-						<form th:action="@{/admin/product/create}">
+						<form th:action="@{/admin/news/create}">
 							<button class="btn btn-info">Create</button>
 						</form>
 
@@ -48,14 +48,14 @@
 												<th class="center"><label class="pos-rel"> <input
 														type="checkbox" class="ace" /> <span class="lbl"></span>
 												</label></th>
-												<th>Name</th>
+												<th>Title</th>
 												<th>Image</th>
-												<th>Price</th>
+
 
 
 												<th><i
 													class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-													Status</th>
+													Author</th>
 												<th class="hidden-480">Function</th>
 
 
@@ -63,19 +63,19 @@
 										</thead>
 
 										<tbody>
-											<tr th:each="production : ${model.listResult}">
+											<tr th:each="news : ${newsModel.listResult}">
 
 
 												<td class="center"><label class="pos-rel"> <input
 														type="checkbox" class="ace" /> <span class="lbl"></span>
 												</label></td>
 
-												<td th:text="${production.name}"></td>
+												<td th:text="${news.title}"></td>
 												<td><img style="width: 80px; height: 80px;"
-													th:src="@{${production.image_1}}"></td>
-												<td th:text="${production.price}" class="hidden-480"></td>
+													th:src="@{${news.image_1}}"></td>
 
-												<td th:text="${production.status}" class="hidden-480"><span
+
+												<td th:text="${news.author}" class="hidden-480"><span
 													class="label label-sm label-warning"></span></td>
 
 												<td>
@@ -84,13 +84,13 @@
 
 														<button class="btn btn-xs btn-info">
 															<i class="ace-icon fa fa-pencil bigger-120"><a
-																th:href="@{/admin/product/edit/{id}(id =${production.id})}">Edit</a></i>
+																th:href="@{/admin/news/edit/{id}(id =${news.id})}">Edit</a></i>
 														</button>
 
 
 														<button class="btn btn-xs btn-danger">
 															<i class="ace-icon fa fa-trash bigger-120"><a
-																th:href="@{/admin/product/delete/{id}(id=${production.id})}"
+																th:href="@{/admin/news/delete/{id}(id=${news.id})}"
 																class="tooltip-error" data-rel="tooltip" title="Delete">
 																	Delete</a></i>
 														</button>
@@ -132,24 +132,24 @@
 										</tbody>
 									</table>
 									<ul class="pagination pagination-lg"
-										th:if="${model.totalPage > 1}">
+										th:if="${newsModel.totalPage > 1}">
 										<li><a
-											th:if="${model.currentPage <= model.totalPage && model.currentPage>1}"
-											th:href="@{'/admin/product/list?page='+${model.currentPage-1}}">Previous</a>
-											<span th:unless="${model.currentPage < model.totalPage}">Previous</span></li>
+											th:if="${newsModel.currentPage <= newsModel.totalPage && newsModel.currentPage>1}"
+											th:href="@{'/admin/news/list?page='+${newsModel.currentPage-1}}">Previous</a>
+											<span th:unless="${newsModel.currentPage < newsModel.totalPage}">Previous</span></li>
 										<li><span
-											th:each="i : ${#numbers.sequence(1, model.totalPage)}">
-												<a th:if="${model.currentPage != i}"
-												th:href="@{'/admin/product/list?page='+${i}}">[[${i}]]</a> <span
-												th:unless="${model.currentPage!=i}">[[${i}]]</span>
+											th:each="i : ${#numbers.sequence(1, newsModel.totalPage)}">
+												<a th:if="${newsModel.currentPage != i}"
+												th:href="@{'/admin/news/list?page='+${i}}">[[${i}]]</a> <span
+												th:unless="${newsModel.currentPage!=i}">[[${i}]]</span>
 										</span></li>
 
-										<li><a th:if="${model.currentPage < model.totalPage}"
-											th:href="@{'/admin/product/list?page='+${model.currentPage+1}}">NEXT</a>
-											<span th:unless="${model.currentPage < model.totalPage}">NEXT</span></li>
-										<li><a th:if="${model.currentPage < model.totalPage}"
-											th:href="@{'/admin/product/list?page='+${model.totalPage}}">LAST</a>
-											<span th:unless="${model.currentPage < model.totalPage}">LAST</span></li>
+										<li><a th:if="${newsModel.currentPage < newsModel.totalPage}"
+											th:href="@{'/admin/news/list?page='+${newsModel.currentPage+1}}">NEXT</a>
+											<span th:unless="${newsModel.currentPage < newsModel.totalPage}">NEXT</span></li>
+										<li><a th:if="${newsModel.currentPage < newsModel.totalPage}"
+											th:href="@{'/admin/news/list?page='+${newsModel.totalPage}}">LAST</a>
+											<span th:unless="${newsModel.currentPage < newsModel.totalPage}">LAST</span></li>
 
 									</ul>
 

@@ -7,5 +7,7 @@ import com.tranquyet.entity.ManufactureEntity;
 
 @Repository
 public interface ManufactureRepository extends JpaRepository<ManufactureEntity, Long>{
-
+	ManufactureEntity findOneByName(String name);
+	
+	ManufactureEntity findOneById(long id);
 }

@@ -57,11 +57,11 @@ public class ProductEntity extends BasedEntity {
 	private String youtubeUrl;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_category")
+	@JoinColumn(name = "id_category", nullable = true)
 	private CategoryEntity category;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_manufacture")
+	@JoinColumn(name = "id_manufacture", nullable = true)
 	private ManufactureEntity manufacture;
 
 }

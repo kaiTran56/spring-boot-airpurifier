@@ -47,9 +47,7 @@ public class ProductController {
 
 	@GetMapping("/list")
 	public String show(@RequestParam(name = "page", required = false) Optional<Integer> page,
-			@RequestParam(name = "limit", required = false) Optional<Integer> limit,
-
-			Model model) {
+			@RequestParam(name = "limit", required = false) Optional<Integer> limit, Model model) {
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setPage(page.orElse(0));
 		productDTO.setLimit(limit.orElse(5));
@@ -61,9 +59,7 @@ public class ProductController {
 
 		int totalPage = (int) Math.ceil((double) productDTO.getTotalItem() / productDTO.getLimit());
 		productDTO.setTotalPage(totalPage);
-
 		model.addAttribute("model", productDTO);
-
 		return "admin/product/product";
 
 	}
@@ -77,7 +73,7 @@ public class ProductController {
 		return manufactureDTO;
 
 	}
-	
+
 	@ModelAttribute("category")
 	public CategoryDTO getCategory() {
 		CategoryDTO categoryDTO = new CategoryDTO();
@@ -89,7 +85,6 @@ public class ProductController {
 	@GetMapping("/create")
 	public String showCreate(@ModelAttribute("category") CategoryDTO categoryDTO,
 			@ModelAttribute("manufacture") ManufactureDTO manufactureDTO, Model model) {
-
 
 		return "admin/product/create";
 	}
@@ -110,11 +105,11 @@ public class ProductController {
 	@GetMapping("/edit/{id}")
 	public String editProduct(@ModelAttribute("category") CategoryDTO categoryDTO,
 			@ModelAttribute("manufacture") ManufactureDTO manufactureDTO, @PathVariable("id") long id, Model model) {
-		
+
 		ProductDTO product = productService.findById(id);
-		
-		model.addAttribute("product_detail",product);
-		
+
+		model.addAttribute("product_detail", product);
+
 		return "admin/product/detail";
 	}
 

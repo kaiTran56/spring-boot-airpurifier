@@ -92,6 +92,8 @@
 									<div class="col-sm-9">
 										<select th:field="${productController.categoryCode}"
 											id="form-field-1-1" class="form-control">
+											<option th:value="${product_detail.categoryCode}"
+												th:text="${product_detail.categoryCode}"></option>
 											<option th:each="i : ${category.listResult}"
 												th:value="${i.name}" th:text="${i.name}"></option>
 										</select>
@@ -153,12 +155,14 @@
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right"
-										for="form-field-1"> Status: <b style="color: red;">[[${product_detail.categoryCode}]]</b>
+										for="form-field-1"> Status: <b style="color: red;">[[${product_detail.status}]]</b>
 									</label>
 
 									<div class="col-sm-9">
 										<select th:field="${productController.status}"
 											id="form-field-1" class="form-control">
+											<option th:value="${product_detail.status}"
+												th:text="${product_detail.status}"></option>
 											<option th:value="'New'" th:text="'New'"></option>
 											<option th:value="'Sale'" th:text="'Sale'"></option>
 											<option th:value="'Out'" th:text="'Out'"></option>
@@ -252,9 +256,11 @@
 										style="color: red;">[[${product_detail.manufactureCode}]]</b></label>
 
 									<div class="col-sm-9">
+
 										<select th:field="${productController.manufactureCode}"
 											id="form-field-1-1" class="form-control">
-
+											<option th:value="${product_detail.manufactureCode}"
+												th:text="${product_detail.manufactureCode}"></option>
 											<option th:each="i : ${manufacture.listResult}"
 												th:value="${i.name}" th:text="${i.name}"></option>
 										</select>

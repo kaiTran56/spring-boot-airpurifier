@@ -25,7 +25,7 @@ public class ProductConverter {
 		result.setImage_4(dto.getImage_4());
 		result.setShoppeeUrl(dto.getShoppeeUrl());
 		result.setYoutubeUrl(dto.getYoutubeUrl());
-		
+		result.setStatus(dto.getStatus());
 		return result;
 	}
 
@@ -45,7 +45,7 @@ public class ProductConverter {
 		result.setImage_4(dto.getImage_4());
 		result.setShoppeeUrl(dto.getShoppeeUrl());
 		result.setYoutubeUrl(dto.getYoutubeUrl());
-
+		result.setStatus(dto.getStatus());
 		return result;
 	}
 
@@ -68,6 +68,7 @@ public class ProductConverter {
 		result.setYoutubeUrl(entity.getYoutubeUrl());
 		result.setCategoryCode(entity.getCategory().getName());
 		result.setManufactureCode(entity.getManufacture().getName());
+		result.setStatus(entity.getStatus());
 		return result;
 	}
 

@@ -16,7 +16,7 @@ import com.tranquyet.service.ProductService;
 
 @Controller(value = "productController")
 @RequestMapping("/san-pham")
-public class ProductController {
+public class ShopController {
 
 	@Autowired
 	private ProductService productService;

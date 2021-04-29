@@ -2,7 +2,6 @@ package com.tranquyet.controller.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller(value = "homeUser")
 public class HomeController {
@@ -15,7 +14,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "redirect: /trang-chu";
+		return "redirect:/trang-chu";
 	}
 
 }

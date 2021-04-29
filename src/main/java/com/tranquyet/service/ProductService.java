@@ -16,6 +16,10 @@ public interface ProductService {
 	
 	List<ProductDTO> findByManufacture(ManufactureDTO dto);
 	
+	List<ProductDTO> findNewProduct();
+	
+	List<ProductDTO> findOldProduct();
+	
 	int getTotalItem();
 
 	ProductDTO findById(long id);

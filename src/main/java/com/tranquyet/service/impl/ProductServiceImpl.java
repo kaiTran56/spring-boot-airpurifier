@@ -112,4 +112,28 @@ public class ProductServiceImpl implements ProductService {
 		return listDTO;
 	}
 
+	@Override
+	public List<ProductDTO> findNewProduct() {
+		List<ProductDTO> listDTO = new ArrayList<>();
+
+		List<ProductEntity> listEntity = productRepository.findNewProduct();
+
+		listEntity.forEach(p -> listDTO.add(converter.toDTO(p)));
+
+		return listDTO;
+
+	}
+
+	@Override
+	public List<ProductDTO> findOldProduct() {
+		List<ProductDTO> listDTO = new ArrayList<>();
+
+		List<ProductEntity> listEntity = productRepository.findOldProduct();
+
+		listEntity.forEach(p -> listDTO.add(converter.toDTO(p)));
+
+		return listDTO;
+	}
+	
+
 }

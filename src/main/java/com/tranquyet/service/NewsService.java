@@ -11,8 +11,9 @@ public interface NewsService {
 	List<NewsDTO> findAll(Pageable page);
 
 	List<NewsDTO> findByTopic(TopicDTO dto);
-	
-	
+
+	List<NewsDTO> findNewest();
+
 	int getTotalItem();
 
 	NewsDTO findById(long id);

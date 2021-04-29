@@ -68,11 +68,11 @@ public class NewsServiceImpl implements NewsService {
 			NewsEntity oldEntity = newsRepository.findOneById(dto.getId());
 			newsEntity = converter.toEntity(dto, oldEntity);
 			oldEntity.setTopic(topicEntity);
-			
+
 		} else {
 			newsEntity = converter.toEntity(dto);
 			newsEntity.setTopic(topicEntity);
-			
+
 		}
 		return converter.toDTO(newsRepository.save(newsEntity));
 	}
@@ -82,6 +82,14 @@ public class NewsServiceImpl implements NewsService {
 		for (long id : ids) {
 			newsRepository.deleteById(id);
 		}
+	}
+
+	@Override
+	public List<NewsDTO> findNewest() {
+		List<NewsDTO> listDTO = new ArrayList<>();
+		List<NewsEntity> listEntity = newsRepository.findNewest();
+		listEntity.forEach(p -> listDTO.add(converter.toDTO(p)));
+		return listDTO;
 	}
 
 }

@@ -8,15 +8,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.tranquyet.controller.web.base.BasedCategory;
 import com.tranquyet.dto.ProductDTO;
 import com.tranquyet.service.ProductService;
 
 @Controller(value = "productController")
-@RequestMapping("/san-pham")
-public class ShopController {
+public class ShopController extends BasedCategory {
 
 	@Autowired
 	private ProductService productService;
@@ -28,7 +27,7 @@ public class ShopController {
 		return product;
 	}
 
-	@GetMapping("/")
+	@GetMapping("/cua-hang")
 	public String getProduct(@ModelAttribute("product") ProductDTO productDTO,
 			@RequestParam(name = "page", required = false) Optional<Integer> page,
 			@RequestParam(name = "limit", required = false) Optional<Integer> limit) {
@@ -45,7 +44,9 @@ public class ShopController {
 		int totalPage = (int) Math.ceil((double) productDTO.getTotalItem() / productDTO.getLimit());
 		productDTO.setTotalPage(totalPage);
 
-		return "web/product/san_pham";
+		return "web/product/shop-grid";
 	}
+
+	
 
 }

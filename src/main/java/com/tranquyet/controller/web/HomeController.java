@@ -10,13 +10,12 @@ import com.tranquyet.dto.CategoryDTO;
 import com.tranquyet.dto.ManufactureDTO;
 import com.tranquyet.dto.NewsDTO;
 import com.tranquyet.dto.ProductDTO;
-import com.tranquyet.service.CategoryService;
 import com.tranquyet.service.ManufactureService;
 import com.tranquyet.service.NewsService;
 import com.tranquyet.service.ProductService;
 
 @Controller(value = "homeUser")
-public class HomeController extends BasedCategory{
+public class HomeController extends BasedCategory {
 
 	@Autowired
 	private NewsService newsService;
@@ -70,5 +69,12 @@ public class HomeController extends BasedCategory{
 	public String index() {
 		return "redirect:/trang-chu";
 	}
+
+	@GetMapping("/lien-he")
+	public String getContact(@ModelAttribute("categoryList") CategoryDTO categoryDTO) {
+		return "web/contact/contact";
+	}
+
+	
 
 }

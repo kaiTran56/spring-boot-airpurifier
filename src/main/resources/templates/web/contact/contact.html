@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="web/fragment/fragment :: web_header">
+<meta charset="UTF-8">
+
+</head>
+
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Humberger Begin -->
+	<div th:replace="web/fragment/fragment :: web_menu_action"></div>
+	<!-- Contact Section Begin -->
+	<section class="contact spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 text-center">
+					<div class="contact__widget">
+						<span class="icon_phone"></span>
+						<h4>Phone</h4>
+						<p>+01-3-8888-6868</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 text-center">
+					<div class="contact__widget">
+						<span class="icon_pin_alt"></span>
+						<h4>Address</h4>
+						<p>60-49 Road 11378 New York</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 text-center">
+					<div class="contact__widget">
+						<span class="icon_clock_alt"></span>
+						<h4>Open time</h4>
+						<p>10:00 am to 23:00 pm</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 text-center">
+					<div class="contact__widget">
+						<span class="icon_mail_alt"></span>
+						<h4>Email</h4>
+						<p>hello@colorlib.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Section End -->
+	<!-- Map Begin -->
+	<div class="map">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.332093995564!2d105.75473927087985!3d20.94554613390489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe2465301bed4c85a!2sTo%C3%A0%20V5%20The%20Vesta!5e1!3m2!1sen!2s!4v1619679246377!5m2!1sen!2s"
+			width="600" height="450" style="border: 0;" allowfullscreen=""
+			loading="lazy"></iframe>
+
+	</div>
+	<!-- Map End -->
+
+
+
+	<div th:replace="web/fragment/fragment :: web_footer"></div>
+
+
+</body>
+
+</html>
